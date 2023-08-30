@@ -3,16 +3,19 @@ import markdown from "remark-parse";
 import remarkBreaks from "remark-breaks";
 import docx from "remark-docx";
 import pdf from "remark-pdf/node";
-import remarkRehype from 'remark-rehype';
-import rehypeStringify from 'rehype-stringify';
 import unifiedPrettier from 'unified-prettier';
 
-const remarkDoc = async (markdownSource, docName, docType) => {
+export default async function(params){
+    /*
     if(docType === 'docx'){
-        return await remarkDocx(markdownSource, docName);
+        return await remarkDocx(params.markdownSource, params.docName);
     }else{
-        return await remarkPdf(markdownSource, docName);
-    }
+        return await remarkPdf(params.markdownSource, params.docName);
+    }*/
+    return {
+        statusCode: 200,
+         body: "boo"
+    };
 }
 
 async function remarkDocx(markdownSource, docName) {
@@ -20,7 +23,10 @@ async function remarkDocx(markdownSource, docName) {
     
     const doc = await processor.process(markdownSource);
     const buffer = await doc.result;
-    return buffer
+    return {
+        statusCode: 200,
+         body: buffer
+    };
 }
 
 async function remarkPdf(markdownSource, docName) {
@@ -28,8 +34,8 @@ async function remarkPdf(markdownSource, docName) {
     
     const doc = await processor.process(markdownSource);
     const buffer = await doc.result;
-    return buffer
+    return {
+        statusCode: 200,
+         body: buffer
+    };
 }
-
-export default remarkDoc;
-  

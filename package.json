@@ -11,6 +11,7 @@
     "@spectrum-icons/workflow": "^3.2.0",
     "core-js": "^3.6.4",
     "node-fetch": "^2.6.0",
+    "openwhisk": "^3.21.7",
     "pdfmake": "^0.2.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

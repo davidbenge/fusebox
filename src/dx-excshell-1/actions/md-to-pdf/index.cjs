@@ -22,7 +22,7 @@ const { errorResponse, getBearerToken, stringParameters, checkMissingRequestInpu
 async function main (params) {
   const base64RegExp = /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$/
   //const remarkDoc = await import('../common/remarkDoc.mjs')
-  let remarkDoc = (await import('../remarkDoc.mjs')).default
+  let remarkDoc = (await import('../remarkDoc/remarkDoc.mjs')).default
   //console.log(JSON.stringify(remarkDoc))
 
   // create a Logger
@@ -76,14 +76,20 @@ async function main (params) {
       return errorResponse(500, 'Document building error', logger)
     }
 
+    /*
+    const response = {
+      "statusCode": 200,
+      "body": {
+        "docName":`${params.docName}.${params.docType}`,
+        "docType":`${params.docType}`,
+        "docBody":"base64_buffer"
+        //'doc':resultBuffer.toString('base64')
+      }
+    }
+    */
     const response = {
       statusCode: 200,
-      body: {
-        'docName':`${params.docName}.${params.docType}`,
-        'docType':`${params.docType}`,
-        'docBody':'base64_buffer',
-        'doc':resultBuffer.toString('base64')
-      }
+      body: {test:"test"}
     }
 
     return response
