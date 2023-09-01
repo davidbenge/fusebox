@@ -47,7 +47,7 @@ function bootstrapInExcShell () {
   // runtime.heroClick = () => window.alert('Did I ever tell you you\'re my hero?')
 
   // ready event brings in authentication/user info
-  runtime.on('ready', ({ imsOrg, imsToken, imsProfile, locale }) => {
+  runtime.on('ready', ({ imsOrg, imsToken, imsProfile, locale, externalQueryParams }) => {
     // tell the exc-runtime object we are done
     runtime.done()
     console.log('Ready! received imsProfile:', imsProfile)
@@ -56,6 +56,8 @@ function bootstrapInExcShell () {
       org: imsOrg,
       token: imsToken
     }
+
+    console.log('test paths', externalQueryParams )
     // render the actual react application and pass along the runtime and ims objects to make it available to the App
     ReactDOM.render(
       <App runtime={runtime} ims={ims} />,

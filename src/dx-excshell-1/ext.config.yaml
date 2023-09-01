@@ -9,57 +9,19 @@ runtimeManifest:
     dx-excshell-1:
       license: Apache-2.0
       actions:
-        generic:
-          function: actions/generic/index.cjs
-          web: 'yes'
-          runtime: nodejs:16
-          inputs:
-            LOG_LEVEL: debug
-          annotations:
-            require-adobe-auth: false
-            final: true
-        md-to-docx:
-          function: actions/md-to-docx/index.cjs
-          web: 'yes'
-          runtime: nodejs:16
-          inputs:
-            LOG_LEVEL: debug
-            AIO_RUNTIME_AUTH: $AIO_runtime_auth
-            AIO_RUNTIME_APIHOST: $AIO_runtime_apihost
-          annotations:
-            require-adobe-auth: false
-            final: true
-        md-to-pdf:
-          function: actions/md-to-pdf/index.cjs
-          web: 'yes'
-          runtime: nodejs:16
-          inputs:
-            LOG_LEVEL: debug
-          annotations:
-            require-adobe-auth: false
-            final: true
-        md-to-docx-info:
-          function: actions/md-to-docx-info/index.cjs
-          web: 'yes'
-          runtime: nodejs:16
-          inputs:
-            LOG_LEVEL: debug
-          annotations:
-            require-adobe-auth: false
-            final: true
-        md-to-pdf-info:
-          function: actions/md-to-pdf-info/index.cjs
-          web: 'yes'
-          runtime: nodejs:16
-          inputs:
-            LOG_LEVEL: debug
-          annotations:
-            require-adobe-auth: false
-            final: true
         remarkDoc:
-          function: actions/remarkDoc/remarkDoc.mjs
+          function: actions/remarkDoc/index.mjs
           web: 'yes'
-          runtime: nodejs:16
+          runtime: nodejs:18
+          inputs:
+            LOG_LEVEL: debug
+          annotations:
+            require-adobe-auth: false
+            final: true
+        testmjs:
+          function: actions/testmjs/index.mjs
+          web: 'yes'
+          runtime: nodejs:18
           inputs:
             LOG_LEVEL: debug
           annotations:
