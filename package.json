@@ -10,6 +10,8 @@
     "@adobe/react-spectrum": "^3.4.0",
     "@spectrum-icons/workflow": "^3.2.0",
     "core-js": "^3.6.4",
+    "form-data": "^4.0.0",
+    "jsonwebtoken": "^9.0.2",
     "node-fetch": "^2.6.0",
     "openwhisk": "^3.21.7",
     "pdfmake": "^0.2.7",
@@ -44,7 +46,6 @@
     "node": ">=18"
   },
   "aio-app-builder-templates": [
-    "@adobe/generator-app-excshell",
     "@adobe/generator-add-action-generic"
   ]
 }

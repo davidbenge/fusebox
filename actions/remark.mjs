@@ -1,12 +1,12 @@
-let unified;
-//import { unified } from "unified";
-let markdown;
-//import markdown from "remark-parse";
+//let unified;
+import { unified } from "unified";
+//let markdown;
+import markdown from "remark-parse";
 let remarkBreaks;
 //import remarkBreaks from "remark-breaks";
-let docx;
+//let docx;
 //import docx from "remark-docx";
-let pdf;
+//let pdf;
 //import pdf from "remark-pdf/node";
 let unifiedPrettier;
 //import unifiedPrettier from 'unified-prettier';
@@ -30,7 +30,7 @@ let unifiedPrettier;
    // };
 //}
 
-function remarkDoc(params) {
+export default async function (params) {
     return {
       statusCode: 200,
       headers: {
@@ -66,5 +66,3 @@ async function remarkPdf(markdownSource, docName) {
     };
 }
 */
-
-exports.main = remarkDoc;

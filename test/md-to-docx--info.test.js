@@ -14,7 +14,7 @@ Core.Logger.mockReturnValue(mockLoggerInstance)
 
 jest.mock('node-fetch')
 const fetch = require('node-fetch')
-const action = require('./../actions/md-to-docx--info/index.js')
+const action = require('../../actions/md-to-docx--info/index.js')
 
 beforeEach(() => {
   Core.Logger.mockClear()

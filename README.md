@@ -6,13 +6,24 @@ Welcome to my Adobe I/O Application!
 
 - Populate the `.env` file in the project root and fill it as shown [below](#env)
 
-## Local Dev
+## get-auth
+Gets an auth token for the given data passed
 
-- `aio app run` to start your local Dev server
-- App will run on `localhost:9080` by default
+Trick: private_key can be a base64 encoded private key BUT you need to encode it correctly.  In many private key gens you will see the line return and new line.  You need to remove them.  Start a Vs code new text file.  Paste in the private key and everywhere there is a \r\n hit return.  Take the results to https://www.base64encode.org/ or something like that and encode with destination char set UTF-8 and Destination newline separator as LF.  Take the resulting sting and put it in as the value being passed to the service.  
 
-By default the UI will be served locally but actions will be deployed and served from Adobe I/O Runtime. To start a
-local serverless stack and also run your actions locally use the `aio app run --local` option.
+*call parameters*
+```json 
+{
+    "client_id":"cm-p113111-e1111111-integration-1",
+    "technical_account_id":"CCD8888464F276020A495FA7@techacct.adobe.com",
+    "org_id":"33C1401053CF76370A123ABC@AdobeOrg",
+    "client_secret":"p8e-yCY31pg42PSizKoV20g21WDxfNnnnn-X",
+    "private_key":"LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb3dJQkFBS0NBUUVBMnBzSXJkNWR4U2MvZlBrNDI0Y05mekZGeVgrbUdPTjdkb29Ma3M3WVY2TFM1YmxFClYzTmFad3hnSnJTNEs1WjkxbHFBaDFuSFQwNFUyeTZXN3BMbjRac2s3YmN3djQzWUVTZENFdjVhTk1rY2M4NFAKOVlrZEptWkxOeWxTR1lmSlZib1Y4K0VGTTZKVHp5ZVFsajFaUWZSMEZoL3AyQUhodk01MjN5cHp0SlArYjhVTwp5MjBYQTZ3bnd4eDVXdlFHZU4yK25tZzRKdzVRaHRkMC9YbDNna2ZTTENWanB5bzJQM253V2JhMVdmd2lTQ2FBCk9wVm5ib2hDV05qb1ZjcTRtV2VVRUVaazJ1eWcyT3FJT2RzKzd6djFWMUpPOXR6UnRYOHpoNyt2dnF4NWd5SWEKTlQ4dURNN3RuSmVqSVBvMXJ3UzlSMjJ1YmpKbkJyVXBLU291b1FJREFRQUJBb0lCQUQvc2JkRko0T214M0dMVApEY2xENkxKMDJnOWVBRmZ1elQrUWhtbmJpbSsxOFMyenkwUTNPd3cvRmk2N1VjK05KaWIwTi9sY1MyZnBVVGYyCm03UVB5VGF6ZzB6djhKVlRDUWViRHpzMm5YSXFET1BnTWRKKzBjTlV6bEhIQjNibnVmd1RlaS9pY1A3MFRNV2EKc0REK3A0Y2QwSVJYdUsydGZ6RVN2cmZyVmdKTGFmRUorKzJoLytHbllFT05xWE1LK3pWL2huZUPVTRrZmlXeGhaCnZMWUNlV0p2d0VkWUZLb0l4Zys0ckQrNGpNb2xzTVpJSitMSkhhc0NnWUJMMVhVcGYwNml1cmp4VFpsTWV5ZmcKZXpXTVlGZkVWaTRnWjd4NCsydGVJclhDeTRCRUNMNnliM3ZnRUF2WVJ1VVlVOWpIT1c0QXhpUGFvT3VWSlFFNApPOGNqLzJ1M1hzS0RJc21EK2x6QmZORU1LRnErU29KN1lodWhCSUl2UEdEVmlQd2dFb0RoekkvazJEN2ZIRWt6CkdKcXFWb2kzMmZLK29hM2c2NDJkL3dLQmdRRGhjNDBHVFZMWDMzYUQ1L0lFaHptTGNLV3FZMURISXZrT2JwWnEKc2EwNTlpNi9OOTFyUEFiMTFqbTV3ZVNhK3RpSGt5YWgrblJoMmQyKzNlYWpvQWM5dWw2d0d2bDJ2Yk1HU3lPOQptMVl5c1F3UjAwMEdPcXNJQ09zc3JLTmJlQjZvZzRHSUFWNDZPQVFERWFFdENkZ3gxNTlvY3luTmlnMUhWcERBCjVRMXlmUUtCZ0NKVEZkdUVQdXIxOENOY29lamhoaFRXd2JqYS80Y012RHhBeE1KbEJSZERLeld2ZGVhMGpxdGsKbWFsUXByeExwd0g2eTJ5K1pvbXVQUVMydUd5dTVYNnhvUlh1YnNVOGdZVmVLbUFMUWlFN3NySGdubVVYelVjagphdUZnSVhFcWszMWxJNXBUMVJabEJ0ZEVoVWhyNjl3ZHM5SVZWNy9GUVZHOUtNZHB3cEJ0Ci0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0t",
+    "meta_scopes":"ent_aem_cloud_api",
+    "private_key_base64":true
+}
+```
+
 
 ## Test & Coverage
 

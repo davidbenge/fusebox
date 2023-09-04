@@ -1,3 +1,26 @@
-extensions:
-  dx/excshell/1:
-    $include: src/dx-excshell-1/ext.config.yaml
+application:
+  actions: actions
+  runtimeManifest:
+    packages:
+      fusebox:
+        license: Apache-2.0
+        actions:
+          md-to-docx:
+            function: actions/md-to-docx/index.cjs
+            web: 'yes'
+            runtime: nodejs:16
+            inputs:
+              LOG_LEVEL: debug
+            annotations:
+              require-adobe-auth: false
+              final: true
+          get-auth:
+            function: actions/get-auth/index.cjs
+            web: 'yes'
+            runtime: nodejs:16
+            inputs:
+              LOG_LEVEL: debug
+              IMS: $IMS
+            annotations:
+              require-adobe-auth: false
+              final: true
